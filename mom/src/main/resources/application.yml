@@ -1,0 +1,33 @@
+server:
+  port: 8080
+spring:
+  devtools:
+    restart:
+      enabled: true
+  jpa:
+    default:
+      properties:
+        hibernate:
+          physical_naming_strategy: "io.micronaut.data.hibernate.naming.DefaultPhysicalNamingStrategy"
+          default_schema: MOM
+    show-sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: none
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/LMS_IIPEV6?autoReconnect=true&useSSL=false&createDatabaseIfNotExist=true
+    username: postgres
+    password: Joy123
+#    schema: MOM
+
+  cors:
+    allowed-origins: http://localhost:3000
+
+
+
+
+
